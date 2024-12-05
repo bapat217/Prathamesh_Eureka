@@ -6,7 +6,6 @@ import com.arcrobotics.ftclib.controller.PIDController;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.teamcode.Hardware.Globals;
-import org.firstinspires.ftc.teamcode.Hardware.GripperIntakeGlobals;
 import org.firstinspires.ftc.teamcode.Hardware.RobotHardware;
 
 public class Outtake {
@@ -194,10 +193,6 @@ public class Outtake {
                 robot.elbowLeftOut.setPosition(Globals.transferelbowLeftOut);
                 robot.elbowRightOut.setPosition(Globals.transferelbowRightOut);
                 break;
-            case GRIPPER_TRANSFER:
-                robot.elbowLeftOut.setPosition(GripperIntakeGlobals.elbowOutTransferL);
-                robot.elbowRightOut.setPosition(GripperIntakeGlobals.elbowOutTransferR);
-                break;
             case BEFORE_BUCKET:
                 robot.elbowLeftOut.setPosition(Globals.elbowBeforePlaceBucketL);
                 robot.elbowRightOut.setPosition(Globals.elbowBeforePlaceBucketR);
@@ -238,9 +233,6 @@ public class Outtake {
                 break;
             case TRANSFER:
                 robot.wristOut.setPosition(Globals.transferWristOut);
-                break;
-            case GRIPPER_TRANSFER:
-                robot.wristOut.setPosition(GripperIntakeGlobals.wristTransferOut);
                 break;
             case BEFORE_BUCKET:
                 robot.wristOut.setPosition(Globals.wristBeforePlaceBucket);

@@ -12,8 +12,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.Hardware.RobotHardware;
 import org.firstinspires.ftc.teamcode.MecanumDrive;
-import org.firstinspires.ftc.teamcode.Sequences.P_SamplePick;
-import org.firstinspires.ftc.teamcode.Sequences.ScoreAndResetSequence;
+import org.firstinspires.ftc.teamcode.Sequences.Teleop.P_SamplePick;
+import org.firstinspires.ftc.teamcode.Sequences.Teleop.ScoreAndResetSequence;
 import org.firstinspires.ftc.teamcode.Subsystems.Intake;
 import org.firstinspires.ftc.teamcode.Subsystems.Outtake;
 

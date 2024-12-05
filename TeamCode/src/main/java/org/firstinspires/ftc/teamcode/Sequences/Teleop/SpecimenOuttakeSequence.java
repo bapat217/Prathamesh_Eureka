@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Sequences;
+package org.firstinspires.ftc.teamcode.Sequences.Teleop;
 
 import static org.firstinspires.ftc.teamcode.Subsystems.Intake.robot;
 

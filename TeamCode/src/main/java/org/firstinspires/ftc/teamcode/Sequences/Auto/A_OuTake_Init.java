@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.AutoSequences;
+package org.firstinspires.ftc.teamcode.Sequences.Auto;
 
 import com.acmerobotics.roadrunner.SequentialAction;
 import com.acmerobotics.roadrunner.SleepAction;

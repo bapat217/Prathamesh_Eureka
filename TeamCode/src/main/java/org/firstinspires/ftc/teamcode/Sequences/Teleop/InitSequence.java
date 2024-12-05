@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Sequences;
+package org.firstinspires.ftc.teamcode.Sequences.Teleop;
 
 import com.acmerobotics.roadrunner.Action;
 import com.acmerobotics.roadrunner.SequentialAction;
