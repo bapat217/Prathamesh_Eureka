@@ -3,21 +3,17 @@ package org.firstinspires.ftc.teamcode.Opmode.Auto;
 
 import com.acmerobotics.dashboard.config.Config;
 import com.acmerobotics.roadrunner.Action;
-import com.acmerobotics.roadrunner.InstantAction;
 import com.acmerobotics.roadrunner.Pose2d;
 import com.acmerobotics.roadrunner.SequentialAction;
 import com.acmerobotics.roadrunner.SleepAction;
-import com.acmerobotics.roadrunner.Vector2d;
 import com.acmerobotics.roadrunner.ftc.Actions;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.Hardware.RobotHardware;
 import org.firstinspires.ftc.teamcode.MecanumDrive;
-import org.firstinspires.ftc.teamcode.Sequences.InitSequence;
 import org.firstinspires.ftc.teamcode.Sequences.P_SamplePick;
 import org.firstinspires.ftc.teamcode.Sequences.ScoreAndResetSequence;
-import org.firstinspires.ftc.teamcode.Sequences.SpecimenOuttakeSequence;
 import org.firstinspires.ftc.teamcode.Subsystems.Intake;
 import org.firstinspires.ftc.teamcode.Subsystems.Outtake;
 
@@ -60,7 +56,7 @@ public class test_v1 extends LinearOpMode {
                         new SleepAction(0.1),
                         P_SamplePick.SampleOutTakeGClosed(intake, outtake),
                         new SleepAction(0.1),
-                        P_SamplePick.SampleTransferGOpen(intake, outtake),
+                        P_SamplePick.SampleIntakeGOpen(intake, outtake),
                         new SleepAction(0.3),
                         ScoreAndResetSequence.BeforeScoreBucketSequence(outtake),
 

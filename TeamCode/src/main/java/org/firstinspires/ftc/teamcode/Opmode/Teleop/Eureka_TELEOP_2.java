@@ -18,7 +18,6 @@ import com.qualcomm.robotcore.hardware.IMU;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
-import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
 import org.firstinspires.ftc.teamcode.Hardware.Globals;
 import org.firstinspires.ftc.teamcode.Hardware.RobotHardware;
 import org.firstinspires.ftc.teamcode.MecanumDrive;
@@ -261,7 +260,7 @@ public class Eureka_TELEOP_2 extends LinearOpMode {
                         new SleepAction(0.1),
                         P_SamplePick.SampleOutTakeGClosed(intake, outtake),
                         new SleepAction(0.1),
-                        P_SamplePick.SampleTransferGOpen(intake, outtake),
+                        P_SamplePick.SampleIntakeGOpen(intake, outtake),
                         new SleepAction(0.3),
                         ScoreAndResetSequence.BeforeScoreBucketSequence(outtake)
                 ));

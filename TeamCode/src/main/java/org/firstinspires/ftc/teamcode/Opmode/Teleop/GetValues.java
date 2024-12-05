@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Test;
+package org.firstinspires.ftc.teamcode.Opmode.Teleop;
 
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -12,7 +12,7 @@ import org.firstinspires.ftc.teamcode.Hardware.NewIntakeRobotHardware;
 
 @TeleOp
 
-public class getValuesIntake extends LinearOpMode {
+public class GetValues extends LinearOpMode {
     NewIntakeRobotHardware robot = NewIntakeRobotHardware.getInstance();
     private double INCREMENT = 0.001;
     private static double power = 1;
@@ -38,7 +38,7 @@ public class getValuesIntake extends LinearOpMode {
         robot.elbowLeftOut.setPosition(servoLeftPosition);
         robot.elbowRightOut.setPosition(servoRightPosition);
         robot.wristOut.setPosition(wristSer);
-        robot.gripperOut.setPosition(Globals.gripperServoOpen);
+        robot.gripperOut.setPosition(Globals.oGripperOpen);
         waitForStart();
 
 

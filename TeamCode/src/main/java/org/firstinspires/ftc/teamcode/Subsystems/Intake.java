@@ -155,9 +155,9 @@ public class Intake {
                 current = Globals.iElbow_Obs_Drop;
                 break;
         }
-        if(this.ixextensionState == iXextensionStates.MID || (this.ixextensionState == iXextensionStates.LAST)) {
-            current = Globals.iElbowChangePos;
-        }
+//        if(this.ixextensionState == iXextensionStates.MID || (this.ixextensionState == iXextensionStates.LAST)) {
+//            current = Globals.iElbowChangePos;
+//        }
         robot.iElbow.setPosition(current);
 
     }

@@ -71,13 +71,7 @@ public class Eureka_TELEOP_4 extends LinearOpMode {
     MecanumDrive drive = null;
     double STRAFE =1, THROTTLE = 1, HEADING = 0.8;
     private IMU imu;
-    public static boolean isBreak = false;
-    public static boolean sample_detected = false;
-    public static boolean wrong_detected = false;
-    public static boolean not_transfer = false;
-    public static boolean specimen_done = false;
 
-    public static boolean done_scoring = false;
     @Override
     public void runOpMode() throws InterruptedException {
         robot.init(hardwareMap, telemetry);
@@ -181,9 +175,7 @@ public class Eureka_TELEOP_4 extends LinearOpMode {
             drive.updatePoseEstimate();
 
 
-
             // TODO SAMPLE
-
             /*
             SAMPLE INTAKE
             In Sample mode --> Pre Pick sample
@@ -261,7 +253,7 @@ public class Eureka_TELEOP_4 extends LinearOpMode {
                         new SleepAction(0.1),
                         P_SamplePick.SampleOutTakeGClosed(intake, outtake),
                         new SleepAction(0.1),
-                        P_SamplePick.SampleTransferGOpen(intake, outtake),
+                        P_SamplePick.SampleIntakeGOpen(intake, outtake),
                         new SleepAction(0.3),
                         ScoreAndResetSequence.BeforeScoreBucketSequence(outtake)
                 ));

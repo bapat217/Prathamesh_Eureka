@@ -243,7 +243,7 @@ public class Eureka_TELEOP extends LinearOpMode {
                         new SleepAction(0.1),
                         P_SamplePick.SampleOutTakeGClosed(intake, outtake),
                         new SleepAction(0.1),
-                        P_SamplePick.SampleTransferGOpen(intake, outtake),
+                        P_SamplePick.SampleIntakeGOpen(intake, outtake),
                         new SleepAction(0.3),
                         ScoreAndResetSequence.BeforeScoreBucketSequence(outtake)
                 ));

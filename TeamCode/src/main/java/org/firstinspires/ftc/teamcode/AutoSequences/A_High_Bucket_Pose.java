@@ -16,8 +16,7 @@ public class A_High_Bucket_Pose {
                 outtake.wristOutAction(Outtake.WristStateOut.BEFORE_BUCKET),
                 outtake.elbowOutAction(Outtake.ElbowStateOut.BEFORE_BUCKET),
                 outtake.sliderOutAction(Outtake.SliderStateOut.BUCKET_SCORE)
-//                new SleepAction( 2),
-//                new InstantAction(()->robot.verticalSliderRight.setPower(0))
+
 
         ));
     }

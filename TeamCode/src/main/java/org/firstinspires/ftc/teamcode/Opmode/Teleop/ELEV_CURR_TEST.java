@@ -9,7 +9,6 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 import org.firstinspires.ftc.teamcode.Hardware.Globals;
-import org.firstinspires.ftc.teamcode.Hardware.GripperIntakeGlobals;
 import org.firstinspires.ftc.teamcode.Hardware.NewIntakeRobotHardware;
 
 @TeleOp
@@ -44,7 +43,7 @@ public class ELEV_CURR_TEST extends LinearOpMode {
         robot.verticalSliderRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
 
-        robot.gripperOut.setPosition(Globals.gripperServoOpen);
+        robot.gripperOut.setPosition(Globals.oGripperOpen);
         waitForStart();
 
 

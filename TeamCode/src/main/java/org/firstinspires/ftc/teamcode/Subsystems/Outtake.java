@@ -1,11 +1,5 @@
 package org.firstinspires.ftc.teamcode.Subsystems;
 
-import static org.firstinspires.ftc.teamcode.Hardware.Globals.BucketValue;
-import static org.firstinspires.ftc.teamcode.Hardware.Globals.target;
-
-import androidx.annotation.NonNull;
-
-import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
 import com.acmerobotics.roadrunner.Action;
 import com.acmerobotics.roadrunner.InstantAction;
 import com.arcrobotics.ftclib.controller.PIDController;
@@ -80,7 +74,6 @@ public class Outtake {
         SCORE,
         AFTER_TRANSFER,
         BUCKET_SCORE,
-
         HANG,
         PRE_HANG
     } public enum HangerState{
@@ -137,10 +130,10 @@ public class Outtake {
             case INIT:
                 break;
             case OPEN:
-                robot.gripper.setPosition(Globals.gripperServoOpen);
+                robot.gripper.setPosition(Globals.oGripperOpen);
                 break;
             case CLOSE:
-                robot.gripper.setPosition(Globals.gripperServoClose);
+                robot.gripper.setPosition(Globals.oGripperClosed);
                 break;
 
         }
@@ -212,12 +205,12 @@ public class Outtake {
             case BUCKET_SCORE:
                 robot.elbowLeftOut.setPosition(Globals.elbowPlaceBucketL);
                 robot.elbowRightOut.setPosition(Globals.elbowPlaceBucketR);
-            case RUNG:
-                robot.elbowLeftOut.setPosition(Globals.SAMelbowAfterPickSpecimenL);
-                robot.elbowRightOut.setPosition(Globals.SAMelbowAfterPickSpecimenR);
-            case INBETWEEN:
-                robot.elbowLeftOut.setPosition(Globals.INBET_elbowAfterPickSpecimenL);
-                robot.elbowRightOut.setPosition(Globals.INBET_elbowAfterPickSpecimenR);
+//            case RUNG:
+//                robot.elbowLeftOut.setPosition(Globals.SAMelbowAfterPickSpecimenL);
+//                robot.elbowRightOut.setPosition(Globals.SAMelbowAfterPickSpecimenR);
+//            case INBETWEEN:
+//                robot.elbowLeftOut.setPosition(Globals.INBET_elbowAfterPickSpecimenL);
+//                robot.elbowRightOut.setPosition(Globals.INBET_elbowAfterPickSpecimenR);
 
         }
     }
@@ -226,7 +219,7 @@ public class Outtake {
         this.wristStateOut = currentState;
         switch (currentState){
             case INIT:
-                robot.wristOut.setPosition(Globals.wristInitIntake);
+                robot.wristOut.setPosition(Globals.wristInitOutTake);
                 break;
             case AFTER_PICK:
                 robot.wristOut.setPosition(Globals.wristAfterPickSpecimen);
@@ -297,7 +290,7 @@ public class Outtake {
                 runSliders(Globals.BucketValue, 1,10);
 //                runSliderPID(Globals.BucketValueThroughBore);
 //                runSliderPID();
-                Globals.BucketValueThroughBore = 50000;
+//                Globals.BucketValueThroughBore = 50000;
                 break;
             case HANG:
                 runSliders(Globals.ELEV_HANG, 1);
@@ -312,36 +305,17 @@ public class Outtake {
     public Action gripperAction(GripperState state){
         return new InstantAction(()->updateState(state));
     }
-
     public Action elbowOutAction(ElbowStateOut state){
         return new InstantAction(()->updateState(state));
     }
     public Action clutchAction(ClutchState state){
         return new InstantAction(()->updateState(state));
-    }  public Action twistAction(TwistState state){
+    }
+    public Action twistAction(TwistState state){
         return new InstantAction(()->updateState(state));
     }
-
-
-
     public Action sliderOutAction(SliderStateOut state){
         return new InstantAction(()->updateState(state));
-    }
-    public Action sliderOutAction2(SliderStateOut state){
-        return new Action() {
-            private boolean initialized = false;
-
-            @Override
-            public boolean run(@NonNull TelemetryPacket packet) {
-                if (!initialized) {
-                    updateState(state);
-                    initialized = true;
-                }
-//                    packet.put("Posit", vel);
-                return robot.verticalSliderLeft.getCurrentPosition() < targetValue;
-            }
-        };
-//        return new InstantAction(()->updateState(state));
     }
     public Action wristOutAction(WristStateOut state){
         return new InstantAction(()->updateState(state));
